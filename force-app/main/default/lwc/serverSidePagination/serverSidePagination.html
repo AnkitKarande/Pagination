@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Server Side Pagination for Opportunities">
+        <div class="slds-m-around_medium">
+            <template if:true={OpportunityData}>
+                <div class="slds-m-around_small">
+                    <lightning-datatable 
+                        key-field="Id"
+                        columns={columns}
+                        data={OpportunityData}
+                        hide-checkbox-column
+                        show-row-number-column
+                        row-number-offset={rowOffset}
+                    ></lightning-datatable>
+                </div>
+                <div class="slds-m-around_medium slds-align_absolute-center">
+                    <lightning-button variant="brand" label="Previous" onclick={previousPage} disabled={isFirstPage}></lightning-button> 
+                    <span class="slds-m-horizontal_small"> Page {pageNumber} of {totalPages} </span>
+                    <lightning-button variant="brand" label="Next" onclick={nextPage} disabled={isLastPage}></lightning-button> 
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
