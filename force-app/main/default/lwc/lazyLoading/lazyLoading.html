@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Displaying Opportunities With lazy loading">
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+            key-field="Id"
+            columns={columns}
+            data={OpportunityData}
+            hide-checkbox-column
+            show-row-number-column
+            enable-infinite-loading
+            onloadmore={loadMoreOpportunities}
+            is-loading={isLoading}
+            ></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
